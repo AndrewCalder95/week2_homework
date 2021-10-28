@@ -14,4 +14,6 @@ class TestRoom(unittest.TestCase):
 
     def test_rooms_have_capacity(self):
         self.assertEqual(14, self.room2.capacity)
-
+    
+    def test_rooms_have_cost(self):
+        self.assertEqual(40, self.room3.cost_per_hour)
