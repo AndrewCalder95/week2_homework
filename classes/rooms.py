@@ -4,3 +4,8 @@ class Room:
         self.name = name
         self.capacity = capacity
         self.cost_per_hour = cost_per_hour
+        self.guests_in_room = []
+
+    # def check_in(self, guests):
+    #     if 
+
