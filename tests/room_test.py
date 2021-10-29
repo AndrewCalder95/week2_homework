@@ -70,5 +70,9 @@ class TestRoom(unittest.TestCase):
         self.room1.check_in(self.guest1)
         self.assertEqual(30, self.guest1.cash)
 
+    def test_adds_payment_to_till(self):
+        self.room1.check_in(self.guest1)
+        self.assertEqual(90, self.room1.till)
+
 
     
