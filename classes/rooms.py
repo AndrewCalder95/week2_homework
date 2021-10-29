@@ -10,5 +10,10 @@ class Room:
 
     def check_in(self, guest):
         if guest.room_choice == self.name:
-            self.guests_in_room.append(guest.room_choice)
+            return self.guests_in_room.append(guest.name)
+
+    def check_out(self, guest):
+        for x in self.guests_in_room:
+            if x == guest.name:
+                return self.guests_in_room.remove(guest.name)
 
