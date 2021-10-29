@@ -7,14 +7,14 @@ class TestRoom(unittest.TestCase):
 
     def setUp(self):
 
-        self.guest1 = Guest("Alexandrea", "Large Room", 20)
-        self.guest2 = Guest("Brenda", "Medium Room", 40)
-        self.guest3 = Guest("Callum", "Small Room", 65)
-        self.guest4 = Guest("David", "Mini Room", 20)
-        self.guest5 = Guest("Eva", "Large Room", 14)
-        self.guest6 = Guest("Frank", "Large Room", 78) 
-        self.guest7 = Guest("Gary", "Medium Room", 30)
-        self.guest8 = Guest("Hannah", "Mini Room", 48)
+        self.guest1 = Guest("Alexandrea", "Large Room", 120)
+        self.guest2 = Guest("Brenda", "Medium Room", 140)
+        self.guest3 = Guest("Callum", "Small Room", 165)
+        self.guest4 = Guest("David", "Mini Room", 160)
+        self.guest5 = Guest("Eva", "Large Room", 114)
+        self.guest6 = Guest("Frank", "Large Room", 178) 
+        self.guest7 = Guest("Gary", "Medium Room", 130)
+        self.guest8 = Guest("Hannah", "Mini Room", 190)
 
         self.song1 = Song("Purple Rain", "Prince")
         self.song2 = Song("Love Shack", "The B-52s")
@@ -65,5 +65,10 @@ class TestRoom(unittest.TestCase):
         self.room4.check_in(self.guest4)
         self.room4.check_in(self.guest8)
         self.assertEqual("Sorry this room is full.", self.room4.check_in(self.guest8))
+    
+    def test_takes_payment_from_guest(self):
+        self.room1.check_in(self.guest1)
+        self.assertEqual(30, self.guest1.cash)
+
 
     
