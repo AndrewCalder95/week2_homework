@@ -9,7 +9,7 @@ class TestRoom(unittest.TestCase):
 
         self.guest1 = Guest("Alexandrea", "Large Room", 120)
         self.guest2 = Guest("Brenda", "Medium Room", 140)
-        self.guest3 = Guest("Callum", "Small Room", 165)
+        self.guest3 = Guest("Callum", "Small Room", 35)
         self.guest4 = Guest("David", "Mini Room", 160)
         self.guest5 = Guest("Eva", "Large Room", 114)
         self.guest6 = Guest("Frank", "Large Room", 178) 
@@ -74,5 +74,6 @@ class TestRoom(unittest.TestCase):
         self.room1.check_in(self.guest1)
         self.assertEqual(90, self.room1.till)
 
-
-    
+    def test_insufficent_funds_warning(self):
+        self.room3.check_in(self.guest3)
+        self.assertEqual("You have insufficient funds", self.room3.check_in(self.guest3))
