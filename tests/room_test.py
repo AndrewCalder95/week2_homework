@@ -1,5 +1,6 @@
 import unittest
 from classes.rooms import Room
+from classes.guests import Guest
 
 class TestRoom(unittest.TestCase):
 
@@ -9,6 +10,12 @@ class TestRoom(unittest.TestCase):
         self.room3 = Room("Small Room", 10, 40)
         self.room4 = Room('Mini Room', 7, 30)
 
+        self.guest1 = Guest("Alexandrea", "Large Room")
+        self.guest2 = Guest("Brenda", "Medium Room")
+        self.guest3 = Guest("Callum", "Small Room")
+        self.guest4 = Guest("David", "Mini Room")
+        self.guest5  = Guest("Eva", "Large Room")
+
     def test_rooms_have_name(self):
         self.assertEqual("Large Room", self.room1.name)
 
@@ -17,3 +24,8 @@ class TestRoom(unittest.TestCase):
     
     def test_rooms_have_cost(self):
         self.assertEqual(40, self.room3.cost_per_hour)
+
+    def test_guest_checked_in(self):
+        self.room1.check_in(self.guest1)
+        self.room1.check_in(self.guest5)
+        self.assertEqual(2, len(self.room1.guests_in_room))

@@ -1,3 +1,5 @@
+from classes.guests import Guest
+
 class Room:
 
     def __init__(self, name, capacity, cost_per_hour):
@@ -6,6 +8,7 @@ class Room:
         self.cost_per_hour = cost_per_hour
         self.guests_in_room = []
 
-    # def check_in(self, guests):
-    #     if 
+    def check_in(self, guest):
+        if guest.room_choice == self.name:
+            self.guests_in_room.append(guest.room_choice)
 
