@@ -7,14 +7,14 @@ class TestRoom(unittest.TestCase):
 
     def setUp(self):
 
-        self.guest1 = Guest("Alexandrea", "Large Room", 120)
-        self.guest2 = Guest("Brenda", "Medium Room", 140)
-        self.guest3 = Guest("Callum", "Small Room", 35)
-        self.guest4 = Guest("David", "Mini Room", 160)
-        self.guest5 = Guest("Eva", "Large Room", 114)
-        self.guest6 = Guest("Frank", "Large Room", 178) 
-        self.guest7 = Guest("Gary", "Medium Room", 130)
-        self.guest8 = Guest("Hannah", "Mini Room", 190)
+        self.guest1 = Guest("Alexandrea", "Large Room", 120, "Bohemian Rhapsody")
+        self.guest2 = Guest("Brenda", "Medium Room", 140, "Love Shack")
+        self.guest3 = Guest("Callum", "Small Room", 35, "Purple Rain")
+        self.guest4 = Guest("David", "Mini Room", 160, "Islands in the Stream")
+        self.guest5 = Guest("Eva", "Large Room", 114, "Africa")
+        self.guest6 = Guest("Frank", "Large Room", 178, "Someone like you") 
+        self.guest7 = Guest("Gary", "Medium Room", 130, "R U Mine")
+        self.guest8 = Guest("Hannah", "Mini Room", 190, "Hello")
 
         self.song1 = Song("Purple Rain", "Prince")
         self.song2 = Song("Love Shack", "The B-52s")

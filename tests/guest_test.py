@@ -4,14 +4,14 @@ from classes.guests import Guest
 class TestGuest(unittest.TestCase):
 
     def setUp(self):
-        self.guest1 = Guest("Alexandrea", "Large Room", 20)
-        self.guest2 = Guest("Brenda", "Medium Room", 40)
-        self.guest3 = Guest("Callum", "Small Room", 65)
-        self.guest4 = Guest("David", "Mini Room", 20)
-        self.guest5 = Guest("Eva", "Large Room", 14)
-        self.guest6 = Guest("Frank", "Large Room", 78) 
-        self.guest7 = Guest("Gary", "Medium Room", 30)
-        self.guest8 = Guest("Hannah", "Mini Room", 48)
+        self.guest1 = Guest("Alexandrea", "Large Room", 120, "Bohemian Rhapsody")
+        self.guest2 = Guest("Brenda", "Medium Room", 140, "Love Shack")
+        self.guest3 = Guest("Callum", "Small Room", 35, "Purple Rain")
+        self.guest4 = Guest("David", "Mini Room", 160, "Islands in the Stream")
+        self.guest5 = Guest("Eva", "Large Room", 114, "Africa")
+        self.guest6 = Guest("Frank", "Large Room", 178, "Someone like you") 
+        self.guest7 = Guest("Gary", "Medium Room", 130, "R U Mine")
+        self.guest8 = Guest("Hannah", "Mini Room", 190, "Hello")
 
 
     def test_guest_has_name(self):
@@ -21,4 +21,7 @@ class TestGuest(unittest.TestCase):
         self.assertEqual("Large Room", self.guest1.room_choice)
 
     def test_guest_has_cash(self):
-        self.assertEqual(40, self.guest2.cash)
+        self.assertEqual(140, self.guest2.cash)
+
+    def test_guest_has_favourite_song(self):
+        self.assertEqual("Hello", self.guest8.favourite_song)

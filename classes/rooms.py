@@ -30,5 +30,3 @@ class Room:
 
     def add_to_room_playlist(self,song):
         return self.playlist.append(song)
-
-    # def take_payment(self, guest):
