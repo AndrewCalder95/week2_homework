@@ -7,14 +7,14 @@ class TestRoom(unittest.TestCase):
 
     def setUp(self):
 
-        self.guest1 = Guest("Alexandrea", "Large Room")
-        self.guest2 = Guest("Brenda", "Medium Room")
-        self.guest3 = Guest("Callum", "Small Room")
-        self.guest4 = Guest("David", "Mini Room")
-        self.guest5 = Guest("Eva", "Large Room")
-        self.guest6 = Guest("Frank", "Large Room") 
-        self.guest7 = Guest("Gary", "Medium Room")
-        self.guest8 = Guest("Hannah", "Mini Room")
+        self.guest1 = Guest("Alexandrea", "Large Room", 20)
+        self.guest2 = Guest("Brenda", "Medium Room", 40)
+        self.guest3 = Guest("Callum", "Small Room", 65)
+        self.guest4 = Guest("David", "Mini Room", 20)
+        self.guest5 = Guest("Eva", "Large Room", 14)
+        self.guest6 = Guest("Frank", "Large Room", 78) 
+        self.guest7 = Guest("Gary", "Medium Room", 30)
+        self.guest8 = Guest("Hannah", "Mini Room", 48)
 
         self.song1 = Song("Purple Rain", "Prince")
         self.song2 = Song("Love Shack", "The B-52s")
@@ -36,7 +36,7 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(3, self.room2.capacity)
     
     def test_rooms_have_cost(self):
-        self.assertEqual(40, self.room3.cost_per_hour)
+        self.assertEqual(40, self.room3.cost)
 
     def test_guest_checked_in(self):
         self.room1.check_in(self.guest1)
@@ -62,8 +62,8 @@ class TestRoom(unittest.TestCase):
         self.assertEqual(1, len(self.room1.playlist))
 
     def test_guest_rejected_if_room_too_busy(self):
-        self.room4.check_in_with_capacity_check(self.guest4)
-        self.room4.check_in_with_capacity_check(self.guest8)
-        self.assertEqual("Sorry there are too many people in this room!", self.room4.check_in_with_capacity_check(self.guest8))
+        self.room4.check_in(self.guest4)
+        self.room4.check_in(self.guest8)
+        self.assertEqual("Sorry this room is full.", self.room4.check_in(self.guest8))
 
     
