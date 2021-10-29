@@ -22,5 +22,14 @@ class Room:
     def add_to_room_playlist(self,song):
         return self.playlist.append(song)
 
+    # def check_capacity(self):
+    #     if self.capacity > self.guests_in_room:
+    #         return ("Sorry there are too many people to fit in this room")
+    #     else
 
-
+    def check_in_with_capacity_check(self, guest):
+        if guest.room_choice == self.name:
+            if len(self.guests_in_room) > self.capacity:
+                return "Sorry there are too many people in this room!"
+            else:
+                return self.guests_in_room.append(guest.name)
