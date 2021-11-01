@@ -1,6 +1,3 @@
-from classes.guests import Guest
-from classes.songs import Song
-
 class Room:
 
     def __init__(self, name, capacity, cost):
@@ -30,3 +27,5 @@ class Room:
 
     def add_to_room_playlist(self,song):
         return self.playlist.append(song)
+
+    

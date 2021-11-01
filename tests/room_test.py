@@ -16,12 +16,12 @@ class TestRoom(unittest.TestCase):
         self.guest7 = Guest("Gary", "Medium Room", 130, "R U Mine")
         self.guest8 = Guest("Hannah", "Mini Room", 190, "Hello")
 
-        self.song1 = Song("Purple Rain", "Prince")
-        self.song2 = Song("Love Shack", "The B-52s")
-        self.song3 = Song("Bohemian Rhapsody", "Queen")
-        self.song4 = Song("Islands in the Stream", "Kenny Rogers and Dolly Parton")
-        self.song5 = Song("Africa", "Toto")
-        self.song6 = Song("Someone Like You", "Adele")
+        self.song1 = Song("Purple Rain")
+        self.song2 = Song("Love Shack")
+        self.song3 = Song("Bohemian Rhapsody")
+        self.song4 = Song("Islands in the Stream")
+        self.song5 = Song("Africa")
+        self.song6 = Song("Someone Like You")
 
 
         self.room1 = Room("Large Room", 4, 90)
